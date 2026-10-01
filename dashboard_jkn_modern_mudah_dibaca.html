@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JKN Access Center</title>
+<style>
+:root{--blue:#005bac;--blue2:#0878d1;--green:#00a651;--ink:#17324d;--muted:#6d7d8d;--bg:#f5f8fc;--white:#fff}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink)}
+header{height:72px;background:#fff;display:flex;align-items:center;justify-content:space-between;padding:0 6%;border-bottom:1px solid #e8edf3;position:sticky;top:0;z-index:10}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px;color:var(--blue)}
+.logoMark{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--blue),#1d8be0);color:#fff;display:grid;place-items:center;font-size:21px}
+nav{display:flex;gap:26px}nav a{color:#607184;text-decoration:none;font-size:14px;font-weight:600}nav a:hover{color:var(--blue)}
+.hero{padding:48px 6% 42px;background:linear-gradient(120deg,#eaf5ff 0%,#fff 52%,#eaf9f1 100%);position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:360px;height:360px;border-radius:50%;background:#d9efff;right:-100px;top:-170px}
+.heroGrid{max-width:1180px;margin:auto;display:grid;grid-template-columns:1.05fr .95fr;gap:45px;align-items:center;position:relative;z-index:1}
+.badge{display:inline-flex;align-items:center;gap:7px;padding:8px 13px;background:#fff;border:1px solid #dceaf5;border-radius:30px;color:var(--blue);font-size:12px;font-weight:800}
+h1{font-size:42px;line-height:1.08;margin:15px 0 12px;letter-spacing:-1px}h1 span{color:var(--blue)}
+.subtitle{font-size:16px;line-height:1.65;color:var(--muted);max-width:560px;margin:0 0 24px}
+.heroButtons{display:flex;gap:12px;flex-wrap:wrap}.primary,.secondary{padding:13px 19px;border-radius:11px;text-decoration:none;font-size:14px;font-weight:800}.primary{background:var(--blue);color:#fff}.secondary{background:#fff;color:var(--blue);border:1px solid #cfe0ee}
+.visual{min-height:300px;display:flex;justify-content:center;align-items:center;position:relative}
+.cardMock{width:330px;background:#fff;border-radius:24px;padding:25px;box-shadow:0 22px 55px #005bac24;transform:rotate(3deg);position:relative}
+.cardMock .mini{color:#718296;font-size:12px}.cardMock h3{margin:8px 0 20px;font-size:21px}.input{height:45px;border:1px solid #dce5ed;border-radius:10px;margin-bottom:12px;padding:13px;color:#a0acb8;font-size:12px}.mockBtn{height:45px;border-radius:10px;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:800;font-size:13px}
+.float{position:absolute;right:5%;top:25px;background:#fff;padding:14px 17px;border-radius:15px;box-shadow:0 12px 35px #17324d18;font-size:12px;font-weight:800;color:var(--green)}.float b{display:block;color:var(--ink);font-size:18px;margin-top:3px}
+main{max-width:1180px;margin:-5px auto 50px;padding:0 20px;position:relative;z-index:2}
+.sectionTitle{text-align:center;margin:38px 0 22px}.sectionTitle h2{margin:0 0 6px;font-size:24px}.sectionTitle p{margin:0;color:var(--muted);font-size:14px}
+.menuGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.menu{background:#fff;border:1px solid #e8edf2;border-radius:17px;padding:22px;text-decoration:none;color:var(--ink);box-shadow:0 7px 25px #17324d08;transition:.2s;display:block;min-height:150px}
+.menu:hover{transform:translateY(-4px);box-shadow:0 14px 32px #17324d14;border-color:#cfe0ef}
+.icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:23px;margin-bottom:16px;background:#eaf5ff}
+.menu:nth-child(2) .icon{background:#eaf9f1}.menu:nth-child(3) .icon{background:#fff5df}.menu:nth-child(4) .icon{background:#f1edff}.menu:nth-child(5) .icon{background:#ffecef}.menu:nth-child(6) .icon{background:#edf2f7}
+.menu h3{margin:0 0 6px;font-size:16px}.menu p{margin:0;color:var(--muted);font-size:12px;line-height:1.5}.arrow{float:right;color:#9aabba;font-size:20px;margin-top:-20px}
+.quick{margin-top:28px;background:var(--blue);border-radius:19px;padding:25px 28px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:20px}.quick h3{margin:0 0 5px}.quick p{margin:0;color:#dcecff;font-size:13px}.quick a{background:#fff;color:var(--blue);text-decoration:none;font-weight:800;padding:12px 17px;border-radius:10px;white-space:nowrap}
+footer{text-align:center;padding:28px;background:#fff;border-top:1px solid #e9eef3;color:#82909e;font-size:11px}
+@media(max-width:800px){header{padding:0 5%}nav{display:none}.heroGrid{grid-template-columns:1fr}.hero{padding:38px 5%}.visual{min-height:260px}h1{font-size:34px}.menuGrid{grid-template-columns:1fr 1fr}.quick{display:block}.quick a{display:inline-block;margin-top:15px}}
+@media(max-width:520px){.menuGrid{grid-template-columns:1fr}.heroButtons a{width:100%;text-align:center}}
+</style>
+</head>
+<body>
+<header>
+  <a class="logo" href="#"><span class="logoMark">✚</span> JKN Access Center</a>
+  <nav>
+    <a href="#home">Beranda</a><a href="#layanan">Layanan</a><a href="#informasi">Informasi</a>
+  </nav>
+</header>
+
+<section class="hero" id="home">
+ <div class="heroGrid">
+  <div>
+   <span class="badge">● Pusat Akses Informasi JKN</span>
+   <h1>Semua akses JKN,<br><span>lebih mudah di satu tempat.</span></h1>
+   <p class="subtitle">Temukan layanan, informasi, pembayaran iuran, dan berbagai tautan penting JKN tanpa harus mencari satu per satu.</p>
+   <div class="heroButtons"><a class="primary" href="#layanan">Lihat Layanan →</a><a class="secondary" href="#informasi">Informasi JKN</a></div>
+  </div>
+  <div class="visual">
+   <div class="cardMock"><div class="mini">CEK IURAN JKN</div><h3>Apakah Anda punya tunggakan?</h3><div class="input">Masukkan Nomor Kartu JKN</div><div class="mockBtn">Cek Tunggakan</div></div>
+   <div class="float">Akses cepat<b>6+ layanan</b></div>
+  </div>
+ </div>
+</section>
+
+<main>
+ <section id="layanan">
+  <div class="sectionTitle"><h2>Layanan Utama</h2><p>Pilih layanan yang ingin kamu akses</p></div>
+  <div class="menuGrid">
+   <a class="menu" href="#cek"><div class="icon">🔎</div><span class="arrow">›</span><h3>Cek Tunggakan</h3><p>Periksa informasi tunggakan iuran JKN.</p></a>
+   <a class="menu" href="#bayar"><div class="icon">💳</div><span class="arrow">›</span><h3>Pembayaran Iuran</h3><p>Akses kanal pembayaran seperti Tokopedia.</p></a>
+   <a class="menu" href="#mobile"><div class="icon">📱</div><span class="arrow">›</span><h3>Mobile JKN</h3><p>Akses aplikasi dan informasi Mobile JKN.</p></a>
+   <a class="menu" href="#info"><div class="icon">📘</div><span class="arrow">›</span><h3>Informasi JKN</h3><p>Panduan dan informasi seputar kepesertaan.</p></a>
+   <a class="menu" href="#bantuan"><div class="icon">💬</div><span class="arrow">›</span><h3>Layanan Bantuan</h3><p>Temukan kanal bantuan dan kontak layanan.</p></a>
+   <a class="menu" href="#lainnya"><div class="icon">🔗</div><span class="arrow">›</span><h3>Akses Lainnya</h3><p>Tambahkan link layanan lain sesuai kebutuhan.</p></a>
+  </div>
+ </section>
+
+ <div class="quick" id="informasi">
+  <div><h3>Butuh akses cepat?</h3><p>Tambahkan link prioritas yang paling sering digunakan di sini.</p></div>
+  <a href="#cek">Cek Tunggakan →</a>
+ </div>
+</main>
+
+<footer>Prototype portal akses JKN • Menu dan tautan dapat dikustomisasi</footer>
+</body>
+</html>
